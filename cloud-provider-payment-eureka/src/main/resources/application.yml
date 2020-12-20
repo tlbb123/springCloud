@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: Cloud-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db2020?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Hongkong
+    username: root
+    password: l1998528721
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.tllt.com.tllt.com.tllt.springcloud.entities
+
+---
+
+spring:
+  profiles: payment1
+
+server:
+  port: 8001
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka,http://localhost:7003/eureka
+
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true   #实例显示IP地址
+
+---
+
+spring:
+  profiles: payment2
+
+server:
+  port: 8002
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka,http://localhost:7003/eureka
+  instance:
+    instance-id: payment8002  #自定义实例名称
+    prefer-ip-address: true   #实例显示IP地址
