@@ -4,8 +4,10 @@ import com.tllt.springcloud.entities.Payment;
 import com.tllt.springcloud.mapper.PaymentMapper;
 import com.tllt.springcloud.service.PaymentService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.beans.Transient;
 
 /**
  * @author tllt
@@ -18,7 +20,9 @@ public class PaymentServiceImpl  implements PaymentService {
 
     @Override
     public int create(Payment payment) {
-        return paymentMapper.create(payment);
+        int i = paymentMapper.create(payment);
+        int c=2/i;
+        return i;
     }
 
     @Override

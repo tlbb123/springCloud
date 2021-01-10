@@ -58,3 +58,5 @@ eureka:
     service-url:
       #Eureka 注册中心的地址，多个地址有逗号隔开
       defaultZone: http://cluster1:7001/eureka,http://cluster2:7002/eureka
+  server:
+    enable-self-preservation: false

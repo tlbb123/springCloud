@@ -10,12 +10,15 @@
         <module name="cloud-provider-payment-zookeeper" />
         <module name="spring-api-commons" />
         <module name="cloud-api-commons" />
+        <module name="cloud-consumer-order-feign-hystrix" />
         <module name="cloud-provider-payment-eureka" />
         <module name="cloud-consumer-order-zookeeper" />
         <module name="cloud-consumer-order-consul" />
+        <module name="cloud-consumer-order-feign" />
         <module name="eureka-server" />
         <module name="cloud-consumer-order-eureka" />
         <module name="cloud-provider-payment-consul" />
+        <module name="cloud-provider-payment-hystrix" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

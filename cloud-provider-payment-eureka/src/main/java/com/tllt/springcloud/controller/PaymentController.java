@@ -1,5 +1,6 @@
 package com.tllt.springcloud.controller;
 
+import com.sun.org.apache.regexp.internal.RE;
 import com.tllt.springcloud.entities.CommonResult;
 import com.tllt.springcloud.entities.Payment;
 import com.tllt.springcloud.service.PaymentService;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author tllt
@@ -60,5 +62,14 @@ public class PaymentController {
             return new CommonResult(200,"查询成功,serverPort: "+serverPort,payment);
         else
             return new CommonResult(444,"没有对应记录:"+id,null);
+    }
+
+    @GetMapping("/timeout")
+    public void getTimeOut(){
+        try{
+            Thread.sleep(TimeUnit.SECONDS.toSeconds(3));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
