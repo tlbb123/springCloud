@@ -18,10 +18,13 @@ public class PaymentServiceImpl  implements PaymentService {
     @Resource
     private PaymentMapper paymentMapper;
 
+    @Transactional
     @Override
     public int create(Payment payment) {
         int i = paymentMapper.create(payment);
-        int c=2/i;
+        if(payment.getPaymentId().intValue()%2!=0){
+            int c=1/0;
+        }
         return i;
     }
 

@@ -19,6 +19,9 @@
     <module>cloud-consumer-order-consul</module>
     <module>cloud-consumer-order-feign</module>
     <module>cloud-consumer-order-feign-hystrix</module>
+      <module>cloud-consumer-hystrix-dashboard</module>
+      <module>gateway</module>
+      <module>cloud-config-center</module>
   </modules>
 
   <packaging>pom</packaging>

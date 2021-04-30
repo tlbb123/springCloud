@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -45,6 +47,7 @@ public class PaymentController {
         return this.discoveryClient;
     }
 
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     @PostMapping("/create")
     public CommonResult create(@RequestBody Payment payment){
         int result = paymentService.create(payment);
