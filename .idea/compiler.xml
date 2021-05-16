@@ -20,6 +20,7 @@
         <module name="cloud-consumer-order-feign-hystix" />
         <module name="cloud-privider-payment-consul" />
         <module name="cloud-consumer-order-feign" />
+        <module name="cloud-config-client" />
         <module name="cloud-consumer-order-eureka" />
         <module name="cloud-consumer-feign-order" />
         <module name="cloud-provider-payment-consul" />

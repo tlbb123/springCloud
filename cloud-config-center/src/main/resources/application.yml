@@ -8,13 +8,15 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/tlbb123 #git仓库的名字
-          #搜索的目录
-          search-paths: springcloud-config
+          uri: https://gitee.com/tllt_1/springcloud-config.git #git仓库中clone的地址
+          username: 13108930454  # 私有仓库需要加上账号和密码
+          password: t1998528721
       #读取分支
       label: master
-
 eureka:
   client:
     server-url:
-      defaultZone: http://localhost:7002/eureka
+      defaultZone: http:localhost:7002/eureka
+
+
+
