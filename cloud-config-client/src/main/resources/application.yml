@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: configClient
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7002/eureka
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

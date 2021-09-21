@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    config:
+      label: master
+      name: config
+      profile: dev
+      uri: http://localhost:3344
+
+
+#---
+#server:
+#  port: 3355
+#spring:
+#  profiles: configClient1
+#
+#
+#
+#---
+#server:
+#  port: 3366
+#spring:
+#  profiles: configClient2
+

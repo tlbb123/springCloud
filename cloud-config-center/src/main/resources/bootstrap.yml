@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/tllt_1/springcloud-config.git #git仓库中clone的地址
+          username: 13108930454  # 私有仓库需要加上账号和密码
+          password: t1998528721
+      #读取分支
+      label: master
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka,http://localhost:7003/eureka
+
+#rabbitmq 相关配置,暴露bus刷新配置的端点#
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Param;
  */
 @Mapper
 public interface PaymentMapper {
-    public int create(Payment payment);
+     int create(Payment payment);
 
-    public Payment getPaymentById(@Param("paymentId")Long paymentId);
+     Payment getPaymentById(@Param("paymentId")Long paymentId);
 }

@@ -13,9 +13,18 @@
     <module>cloud-provider-payment-eureka</module>
     <module>cloud-provider-payment-zookeeper</module>
     <module>cloud-provider-payment-consul</module>
+    <module>cloud-provider-payment-hystrix</module>
     <module>cloud-consumer-order-eureka</module>
     <module>cloud-consumer-order-zookeeper</module>
     <module>cloud-consumer-order-consul</module>
+    <module>cloud-consumer-order-feign</module>
+    <module>cloud-consumer-order-feign-hystrix</module>
+      <module>cloud-consumer-hystrix-dashboard</module>
+      <module>gateway</module>
+      <module>cloud-config-center</module>
+      <module>cloud-config-client</module>
+      <module>cloud-stream-rabbitmq-provider</module>
+      <module>cloud-stream-rabbitmq-consumer</module>
   </modules>
 
   <packaging>pom</packaging>
