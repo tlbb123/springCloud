@@ -1,10 +1,2 @@
-/cloud-api-commons/target/
-/cloud-consumer-order-consul/target/
-/cloud-consumer-order-consul/target/
-/cloud-consumer-order-eureka/target/
-/cloud-provider-payment-consul/target/
-/cloud-consumer-order-zookeeper/target/
-/cloud-provider-payment-eureka/target/
-/cloud-provider-payment-zookeeper/target/
-/eureka-server/target/
 /.idea/
+/**/target

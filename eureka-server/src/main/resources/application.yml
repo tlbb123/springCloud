@@ -29,16 +29,18 @@ spring:
 
 eureka:
   instance:
-    #hostname需要和自己域名的保持一致
-    hostname: cluster2
+    hostname: localhost
   client:
-    # 是否将自己注册到注册中心
-    register-with-eureka: true
-    #是否从注册中心检索服务（获取注册信息）
-    fetch-registry: true
-    service-url:
-      #Eureka 注册中心的地址，多个地址有逗号隔开
-      defaultZone: http://cluster1:7001/eureka,http://cluster3:7003/eureka
+    register-with-eureka: false  #false 表示不向注册中心注册自己
+    fetch-registry: false #false 表示自己是注册中心，不需要检索服务
+#  client:
+#    # 是否将自己注册到注册中心
+#    register-with-eureka: true
+#    #是否从注册中心检索服务（获取注册信息）
+#    fetch-registry: true
+#    service-url:
+#      #Eureka 注册中心的地址，多个地址有逗号隔开
+#      defaultZone: http://cluster1:7001/eureka,http://cluster3:7003/eureka
 
 ---
 server:

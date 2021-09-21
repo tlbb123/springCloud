@@ -1,8 +1,4 @@
-server:
-  port: 3355
 spring:
-  application:
-    name: config-client
   cloud:
     config:
       label: master
@@ -11,14 +7,17 @@ spring:
       uri: http://localhost:3344
 
 
-  eureka:
-    client:
-      service-uri:
-        defaultZone: http://localhost:7002/eureka
+#---
+#server:
+#  port: 3355
+#spring:
+#  profiles: configClient1
+#
+#
+#
+#---
+#server:
+#  port: 3366
+#spring:
+#  profiles: configClient2
 
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
