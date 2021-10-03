@@ -1,8 +1,6 @@
-server:
-  port: 8802
 spring:
   application:
-    name: cloud-stream-provider
+    name: cloud-stream-consumer
   cloud:
     stream:
       binders:
@@ -20,6 +18,16 @@ spring:
           destination: studyExchange
           content-type: application/json
           binder: defaultRabbit
+          group: tllt01
+
+
+---
+spring:
+  profiles: consumer01
+
+server:
+  port: 8802
+
 eureka:
   client:
     service-url:
@@ -28,6 +36,23 @@ eureka:
     lease-renewal-interval-in-seconds: 2
     lease-expiration-duration-in-seconds: 5
     instance-id: receive-8802.com
+    prefer-ip-address: true
+
+---
+spring:
+  profiles: consumer02
+
+server:
+  port: 8803
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7002/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 2
+    lease-expiration-duration-in-seconds: 5
+    instance-id: receive-8803.com
     prefer-ip-address: true
 
 
